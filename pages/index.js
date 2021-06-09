@@ -1,15 +1,28 @@
-import Head from 'next/Head'
+import Head from 'next/Head';
+import Link from 'next/Link';
 import Layout from "../components/Layout";
 
 
 export default function Home({pokemon}) {
-  console.log(pokemon);
   return (
     <Layout title="Next Pokedex">
       <h1 className="text-4xl mb-8 text-center ">Next Pokedex </h1>
+      <ul>
+        {pokemon.map((pokeOne, index) => (
+          <li key={index}>
+            <Link href={`/pokemon?id=${index + 1}`}>
+              <a>
+                <img src={pokeOne.image} alt={pokeOne.name} />
+                <span>{index + 1}.</span>
+                {pokeOne.name}
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </Layout>
   )
-}
+};
 
 
 export async function getStaticProps(context) {

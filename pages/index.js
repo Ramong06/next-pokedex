@@ -1,11 +1,11 @@
-// import Head from 'next/Head';
+
 import Link from 'next/Link';
 import Layout from "../components/Layout";
 
 
 export default function Home({pokemon}) {
   return (
-    <Layout title="Next Pokedex">
+    <Layout title="Pokedex">
       <h1 className="text-4xl mb-8 text-center ">Next Pokedex </h1>
       <ul>
         {pokemon.map((pokeOne, index) => (

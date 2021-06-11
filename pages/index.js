@@ -18,7 +18,7 @@ export default function Home({ pokemon }) {
           onChange={e => setSearchTerm(e.target.value)}
         />
       </form>
-      <ul>
+      <ul className="flex flex-col tracking-widest">
         {pokemon
           .filter(pokeOne => pokeOne.name.toLowerCase().includes(searchTerm.toLowerCase()))
           .map((pokeOne, index) => (
